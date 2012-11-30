@@ -1,0 +1,128 @@
+******************************************************************************
+*                                                                            *
+*         Documentation for RollBall - A Shareware Game for OS/2 2.0         *
+*                                                                            *
+******************************************************************************
+
+Program: RollBall Version 0.99
+         Copyright (C) by Stangl Roman, 1992
+         RollBall is Shareware - it can be freely:
+            distributed, but the code or program musn't be used in any
+                commercial product, without contacting me prior.
+            modified, provided the complete source code is attached
+                (preferable the unmodified, and the modified version).
+                This program musn't be ported to MS WINDOWS, because OS/2 is
+                the operating system of the future for PCs and workstations.
+
+         !!! You are encouraged to distribute this program, under the      !!!
+         !!! conditions mentioned in this document. Please load the        !!!
+         !!! complete program up to your favourite BBS-Board/FTP-Server.   !!!
+
+         RollBall is a true 32Bit, multithreaded Presentation Manager program,
+         developed for and under OS/2 2.0.
+
+Requirements:
+         A PC with about 20-33 Mhz 80386,
+         OS/2 2.0 GA,
+         at least VGA, but a coprocessed video (f.e. 8514/A, XGA) greatly
+            improves performance,
+         a mouse or trackball (or equivalent), sorry there's no keyboard
+            support,
+         a maximum of 400kB disk space.
+ 
+Author:  Stangl Roman
+         Strebersdorferstrasse 46
+         2103  Langenzersdorf, Austria
+
+E-Mail:  8650533@awiwuw11.wu-wien.ac.at (IBM 9021)
+         h8650533@d27.wu-wien.ac.at (DECstation /120)
+         (University for Business Administration and Management (Wirtschafts-
+         universit„t) Vienna, Austria
+
+RollBall is game of my proprietary design. The goal of any player is, to roll
+RollBall (the red moving circle) of points (the colored circles) to get
+points. RollBall will be reflected by the borders of the playing ground (the
+borders of the Presentation Manager window), and deflected by the deflectors,
+the / and \ symbols.
+But beware of the holes (the black surronded dark circles), if you get in
+contact with one, you lose your life.
+Points, deflectors and holes randomly disappear and appear. Rolling over any
+point or deflector also removes them. To place a deflector, you use the mouse.
+The left mouse butten will place a \ deflector, and the right button will
+place a / deflector.
+
+I developed this program in about 3 Weeks in August. Because this is my first
+try to program the Presentation Manager there may and will be some bugs. I
+don't have any experience with programming PM, so there may be also more
+efficient steps to to some things, but I have good knowledge in C and of data
+structures and algorithms. For almoust any API (application program interface)
+I check the return value or error code, so there's a good chance, that a bug
+causes a message box to be displayed, giving the error and location in source
+code.
+
+Because OS/2 is a multitasking and multithreaded operating system, it is very
+difficult, to get an exact time bases. Because I haven't found any efficient
+solution to implement a time bases, this progam may be slow an slow machines
+(16Mhz 386sx) and too fast on fast machines (50Mhx 80486). The only solution
+is to add a delay loop in THREAD.C, but this requires a recompilition.
+
+
+******************************************************************************
+
+*** Developers, please read the following: ***
+
+The development was done with:
+    IBM PS/2 80 (24Mhz without any cache)
+    IBM 8514/A  (Adapter and monitor at 1024*768*256)
+    OS/2 2.0 GA (on a HPFS volume)
+    IBM C Set/2 1.0 GA
+but the program should run, or can be compiled, on any PC. Some things to
+remember are:
+    Use of non GA (general availability) versions of OS/2 and/or Toolkit
+    may produce unexpected results.
+    Because this is an OS/2 PM Program, I can't do low level things as in DOS.
+    The program makes heavy use of GPI_BitBlt, which may be slow on standard
+    VGA. On a coprocessed video card (f.e. 8514/A, XGA, TIGA,...) GPI_BitBlt
+    is done by hardware, and therefore much faster. Performance may also be
+    sufficient on 16 Bit VGA or possibly with the coming 32bit graphics
+    enginge of OS/2.
+There's a makefile, that can be used with NMAKE of C Set/2. The used options
+are described. The debug options are enabled, so you should be able, to use
+IPMD without any difficulties.
+
+If you have any suggestions or any improvements, you may contact me. If I have
+time, I will try to support RollBall in the future (at least the next half
+year). You are encouraged, to improve this program under the conditions,
+mentioned above.
+
+Known Bugs:
+    The first time you select Options->Pause you will get an General Error,
+    of type UNKNOWN. It can be ignored (retry does the same) without any
+    problems. As I said, I check almoust any API for errors, and this error,
+    returned by PM, is somewhere in an error-queue I think.
+ 
+    Because, I haven't found any efficient implementation of a time bases,
+    the speed of the game is proportional to the speed of the PC. To slow
+    the game down, you must add a delay loop in THREAD.C. I possibly try
+    to find a more practicable solution for this problem (adjusting thread
+    priority or so?).
+ 
+    Switching between the playing window, and other windows or the dialog
+    boxes sometimes hides RollBall. In this case Options->Pause and Options->
+    Unpause let you continue. The problem is, that if the playing ground
+    is not selected, RollBall should stop from moving. I haven't found any
+    good method, to check which window has the input focus.
+
+History:
+    Version 0.99: The first version programmed and distributed.
+
+******************************************************************************
+
+The following names are (registered) trademarks of:
+    MS WINDOWS
+    DOS...........MicroSoft Corporation
+
+    OS/2 2.0
+    C Set/2, IPMD, NMAKE
+    Toolkit 2.0...International Business Machines Corporation
+

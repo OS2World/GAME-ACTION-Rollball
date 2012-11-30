@@ -1,0 +1,70 @@
+DLGINCLUDE 1 "RollBall.h"
+
+DLGTEMPLATE ID_ABOUTDIALOG PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About RollBall Version 0.99", ID_ABOUTDIALOG, 22, 12, 250, 112, 
+            WS_VISIBLE, FCF_TITLEBAR
+            PRESPARAMS PP_BACKGROUNDCOLOR, 0x00FFFFFFL
+    BEGIN
+        DEFPUSHBUTTON   "~Ok", 4097, 26, 2, 202, 12
+        CTEXT           "RollBall - A Shareware Game for OS/2 2.0", 900, 54, 
+                        94, 184, 8
+        CTEXT           "Copyright (C) by Stangl Roman, 1992", 901, 54, 86, 
+                        184, 8
+        CTEXT           "University      for      Business       Administrat"
+                        "ion      and", 902, 4, 70, 244, 8
+        CTEXT           "Management  (Wirtschaftsuniversit„t)  Vienna, Austr"
+                        "ia", 903, 4, 62, 244, 8
+        CTEXT           "E-Mail: 8650533@awiwuw11.wu-wien.ac.at", 904, 4, 54, 
+                        244, 8
+        CTEXT           "Since  this  is  my  first  try  to  program  the P"
+                        "M,  there", 905, 4, 40, 244, 8
+        CTEXT           "may be some bugs.  Feel  free to  make any  improve"
+                        "-", 906, 4, 32, 244, 8
+        CTEXT           "ments,  if you provide the complete source code - w"
+                        "e", 907, 4, 24, 244, 8
+        CTEXT           "all can learn from it!", 908, 4, 16, 244, 8
+        CONTROL         BM_ABOUT, BM_ABOUT, 26, 86, 20, 16, WC_STATIC, 
+                        SS_BITMAP | WS_GROUP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE ID_SCOREDIALOG PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About Score", ID_SCOREDIALOG, 44, 10, 202, 122, WS_VISIBLE, 
+            FCF_TITLEBAR
+            PRESPARAMS PP_BACKGROUNDCOLOR, 0x00FFFFFFL
+    BEGIN
+        DEFPUSHBUTTON   "~Ok", 4097, 22, 2, 160, 12
+        LTEXT           "1 Point", 926, 62, 61, 36, 8
+        LTEXT           "5 Points", 927, 62, 47, 36, 8
+        LTEXT           "10 Points", 928, 120, 61, 36, 8
+        LTEXT           "20 Points", 929, 120, 47, 36, 8
+        CONTROL         BM_BP, BM_BP, 50, 62, 20, 16, WC_STATIC, SS_BITMAP | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         BM_GP, BM_GP, 50, 48, 20, 16, WC_STATIC, SS_BITMAP | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         BM_MP, BM_MP, 108, 48, 20, 16, WC_STATIC, SS_BITMAP | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         BM_VP, BM_VP, 108, 62, 20, 16, WC_STATIC, SS_BITMAP | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         BM_HOLE, BM_HOLE, 50, 18, 20, 16, WC_STATIC, 
+                        SS_BITMAP | WS_GROUP | WS_VISIBLE
+        LTEXT           "This hole costs your life!", 932, 62, 17, 94, 8
+        CTEXT           "Your   task  is , to  get   as  much  points  as", 
+                        930, 4, 38, 196, 8
+        CTEXT           "possible, but beware of holes!", 931, 4, 30, 196, 8
+        CTEXT           "Your task is to roll RollBall over the points.", 
+                        920, 4, 112, 196, 8
+        CTEXT           "RollBall  will be reflected  by each  border", 921, 
+                        4, 104, 196, 8
+        CTEXT           "of the  playing ground.  To deflect RollBall", 922, 
+                        4, 96, 196, 8
+        CTEXT           "the  symbols   \\ and  /  are used.  Press  the", 
+                        923, 4, 88, 196, 8
+        CTEXT           "left  mouse button  to get  \\ , and  the  right", 
+                        924, 4, 80, 196, 8
+        CTEXT           "one to get / . You will earn score for:", 925, 4, 
+                        72, 196, 8
+    END
+END
