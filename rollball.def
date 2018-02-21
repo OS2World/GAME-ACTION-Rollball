@@ -1,12 +1,10 @@
 NAME    RollBall	WINDOWAPI
 
-DESCRIPTION 'RollBall - A Shareware Game for OS/2 2.0 Presentation Manager'
+DESCRIPTION 'RollBall - A shared game for OS/2 2.0 Presentation Manager'
 
 DATA    MULTIPLE
 
-STACKSIZE   8192
+STACKSIZE  32768
 HEAPSIZE    4096
 
 PROTMODE
-
-

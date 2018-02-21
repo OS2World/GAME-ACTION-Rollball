@@ -1,4 +1,4 @@
-rollball.zoo is a shareware game for OS/2 2.0 PM (not 1.x). The target is to
+RollBall is an open source game for OS/2 2.0 PM (not 1.x). The target is to
 roll a ball to earn points, without falling into holes.
 
 If features:  * Full 32 bit game

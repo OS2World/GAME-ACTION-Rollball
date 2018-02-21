@@ -1,18 +1,57 @@
 ******************************************************************************
 *                                                                            *
-*         Documentation for RollBall - A Shareware Game for OS/2 2.0         *
+*         Documentation for RollBall - A shared game for OS/2 2.0            *
 *                                                                            *
 ******************************************************************************
 
-Program: RollBall Version 0.99
-         Copyright (C) by Stangl Roman, 1992
-         RollBall is Shareware - it can be freely:
-            distributed, but the code or program musn't be used in any
-                commercial product, without contacting me prior.
-            modified, provided the complete source code is attached
-                (preferable the unmodified, and the modified version).
-                This program musn't be ported to MS WINDOWS, because OS/2 is
-                the operating system of the future for PCs and workstations.
+
+
+Program: RollBall Version 0.99, Copyright (C) by Stangl Roman, 1992
+
+
+
+         RollBall Version 1.00, 2017 (25th anniversary)
+
+          - It's anything but a must-have game, but the original author is 
+            responsible for over 99% of the code, and changing 1% is not a 
+            big deal. Nevertheless the changed 1% changed the game.
+
+          - Documentation changed, updated and mixed with old documentation.
+
+          - Hi-res timer used (may not work with OS/2 2.0 anymore).
+          
+          - Made certain death more likely ny increasing the ball's speed,
+            based on the number of times of points scored so far.
+          
+          - "Shareware Game": shared game.
+
+          - Build environment IBM VisualAge C++.
+
+          - BUILD.CMD instead of ROLLBALL.MAK, it's a simple project.
+
+          - lxLite is used too, but not in BUILD.CMD.
+
+          - UI improved, updated and repaired.
+          
+          - Version changed to 1.00.
+
+          - The game no longer requires an Intel 80386 CPU with a specific   
+            speed. The original DosSleep(0) was far too fast. An inspiring
+            DosSleep(1) was too slow. Multiplying the speed of the ball by
+            2 works, after some modifications, works, but then the certain
+            death is sort of missing.
+
+          - Abandoned: error checking. 
+
+
+         RollBall was never really Shareware - it can be freely:
+         distributed, but the code or program must not be used in any
+         commercial product without contacting the original author 
+         prior - modified, provided the complete source code is attached
+         (preferable the unmodified, and the modified version).
+                
+         This program cannot be ported to MS WINDOWS, because OS/2 is
+         the operating system of the future for PCs and workstations.
 
          !!! You are encouraged to distribute this program, under the      !!!
          !!! conditions mentioned in this document. Please load the        !!!
@@ -31,13 +70,6 @@ Requirements:
          a maximum of 400kB disk space.
  
 Author:  Stangl Roman
-         Strebersdorferstrasse 46
-         2103  Langenzersdorf, Austria
-
-E-Mail:  8650533@awiwuw11.wu-wien.ac.at (IBM 9021)
-         h8650533@d27.wu-wien.ac.at (DECstation /120)
-         (University for Business Administration and Management (Wirtschafts-
-         universit„t) Vienna, Austria
 
 RollBall is game of my proprietary design. The goal of any player is, to roll
 RollBall (the red moving circle) of points (the colored circles) to get
@@ -96,18 +128,7 @@ year). You are encouraged, to improve this program under the conditions,
 mentioned above.
 
 Known Bugs:
-    The first time you select Options->Pause you will get an General Error,
-    of type UNKNOWN. It can be ignored (retry does the same) without any
-    problems. As I said, I check almoust any API for errors, and this error,
-    returned by PM, is somewhere in an error-queue I think.
- 
-    Because, I haven't found any efficient implementation of a time bases,
-    the speed of the game is proportional to the speed of the PC. To slow
-    the game down, you must add a delay loop in THREAD.C. I possibly try
-    to find a more practicable solution for this problem (adjusting thread
-    priority or so?).
- 
-    Switching between the playing window, and other windows or the dialog
+Switching between the playing window, and other windows or the dialog
     boxes sometimes hides RollBall. In this case Options->Pause and Options->
     Unpause let you continue. The problem is, that if the playing ground
     is not selected, RollBall should stop from moving. I haven't found any
@@ -115,6 +136,8 @@ Known Bugs:
 
 History:
     Version 0.99: The first version programmed and distributed.
+
+    Version 1.00: The third version programmed and distributed.
 
 ******************************************************************************
 
@@ -125,4 +148,3 @@ The following names are (registered) trademarks of:
     OS/2 2.0
     C Set/2, IPMD, NMAKE
     Toolkit 2.0...International Business Machines Corporation
-

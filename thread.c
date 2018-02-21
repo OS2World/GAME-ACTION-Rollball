@@ -1,8 +1,9 @@
 /***********************************************************************\
- *                                Tread.c                              *
+ *                                Thread.c                             *
 \***********************************************************************/
 
-#define         INCL_DOSPROCESS
+#define         INCL_DOSDEVICES
+#define         INCL_DOSDEVIOCTL
 #define         INCL_DOSMISC
 #define         INCL_PM
 #define         QSV_MS_COUNT 14
@@ -11,6 +12,7 @@
 #include        <stdlib.h>
 #include        "Error.h"
 #include        "RollBall.h"
+#include        "thread.h"              /* Hi-res timer */
 
 void    Put_Random_Field(void);
 void    Clear_Random_Field(void);
@@ -67,6 +69,13 @@ SIZEL           sizelRB={RB_SIZE,RB_SIZE};
                                         /* IDs of each symbol in ressource compilition */
 ULONG           RB_RESSOURCE_ID[RB_BORDER]={0,BM_BP,BM_GP,BM_MP,BM_VP,BM_LX,BM_RX,BM_HOLE,BM_RB};
 
+HFILE           hfile=NULLHANDLE;
+ULONG           ulDelay=50L;
+ULONG           ulDelay2;
+ULONG           ulAction=0L;
+ULONG           ulSize2=sizeof(ulDelay2);
+
+
                                         /* Initialize data for our drawing thread */
 int             Draw_Initialize(void)
 {
@@ -113,6 +122,7 @@ if((rc=DosQuerySysInfo(QSV_MS_COUNT,QSV_MS_COUNT,&sys_timer,4UL))!=0)
 srand(sys_timer);                       /* Start random generator with a really random
                                            number, the milliseconds count since bootup */
 RB_Point[0]=0;                          /* Reset points */
+ulDelay=50L;
 for(i=0;i<=RB_X;i++)                    /* Set border lines of playground */
    RB_Array[i][0]=RB_Array[i][(RB_Y-1)]=RB_BORDER;
 for(i=0;i<=RB_Y;i++)
@@ -356,6 +366,8 @@ while(qmsqDT.msg!=DT_EXIT)
                 RB_Point[0]+=RB_Point[Symbol];
                                         /* Remove the point */
                 RB_Array[x][y]=RB_EMPTY;
+                if (ulDelay)
+                    ulDelay--;
                 DosBeep(700,20);
                 break;
                 }
@@ -381,8 +393,26 @@ while(qmsqDT.msg!=DT_EXIT)
             }
         }
     }
-    DosSleep(0L);
-    }
+DosOpen("TIMER0$",
+        &hfile,
+        &ulAction,
+        0,
+        0,
+        OPEN_ACTION_OPEN_IF_EXISTS,
+        OPEN_FLAGS_FAIL_ON_ERROR | OPEN_SHARE_DENYNONE | OPEN_ACCESS_READWRITE,
+        NULL);   
+ulDelay2=ulDelay/2;
+DosDevIOCtl(hfile,
+            HRT_IOCTL_CATEGORY,
+            HRT_BLOCKUNTIL,
+            &ulDelay2,
+            ulSize2,
+            &ulSize2,
+            NULL,
+            0,
+            NULL);
+DosClose(hfile);
+}
 WinReleasePS(hpsDT);                    /* Clean up */
 WinDestroyMsgQueue(hmqDT);
 WinTerminate(habDT);
@@ -411,4 +441,4 @@ if(GpiBitBlt(hpsDT,                     /* Target presentation space handle */
     BBO_IGNORE)==GPI_ERROR)             /* Options for compression (ignore it) */
     GEN_ERR(habDT,hwndFrame,hwndClient);
 }
-
+

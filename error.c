@@ -171,4 +171,5 @@ if((WinMessageBox(HWND_DESKTOP,         /* Parent window is DESKTOP */
                                         /* If user selected Abort, then close application */
     WinPostMsg(hwndClient, WM_QUIT, (MPARAM)NULL, (MPARAM)NULL);
 }
+
 
