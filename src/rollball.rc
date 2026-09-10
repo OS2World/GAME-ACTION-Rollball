@@ -1,0 +1,69 @@
+#include <os2.h>
+#include "rollball.h"
+
+ICON    ID_WINDOW  PRELOAD  img\rollball.ico
+POINTER ID_POINTER PRELOAD  img\rollball.ptr
+
+BITMAP  BM_ABOUT PRELOAD  img\bitmap1.bmp
+BITMAP  BM_RB    PRELOAD  img\bitmap2.bmp
+BITMAP  BM_LX    PRELOAD  img\bitmap3.bmp
+BITMAP  BM_RX    PRELOAD  img\bitmap4.bmp
+BITMAP  BM_HOLE  PRELOAD  img\bitmap5.bmp
+BITMAP  BM_BP    PRELOAD  img\bitmap6.bmp
+BITMAP  BM_GP    PRELOAD  img\bitmap7.bmp
+BITMAP  BM_MP    PRELOAD  img\bitmap8.bmp
+BITMAP  BM_VP    PRELOAD  img\bitmap9.bmp
+BITMAP  OS2LOGO  PRELOAD  img\os2logo.bmp
+
+MENU ID_WINDOW PRELOAD
+BEGIN
+    SUBMENU "~Game", IDM_SUBMENU_GAME
+    BEGIN
+        MENUITEM "~New Game\tCtrl+N",     IDM_PLAY,  MIS_TEXT
+        MENUITEM "~Pause Game\tCtrl+P",  IDM_PAUSE, MIS_TEXT, MIA_DISABLED
+        MENUITEM "~Quit Game\tCtrl+Q",   IDM_QUIT,  MIS_TEXT, MIA_DISABLED
+        MENUITEM SEPARATOR
+        MENUITEM "E~xit\tCtrl+X",        IDM_EXIT,  MIS_TEXT
+    END
+    SUBMENU "~Options", IDM_SUBMENU_OPTS
+    BEGIN
+        MENUITEM "Score ~Info...",       IDM_SCORE, MIS_TEXT
+        MENUITEM SEPARATOR
+        SUBMENU "~Language", IDM_SUBMENU_LANG
+        BEGIN
+            MENUITEM "English",    IDM_LANG_EN, MIS_TEXT
+            MENUITEM "Espanol",    IDM_LANG_ES, MIS_TEXT
+            MENUITEM "Nederlands", IDM_LANG_NL, MIS_TEXT
+            MENUITEM "Deutsch",    IDM_LANG_DE, MIS_TEXT
+            MENUITEM "Francais",   IDM_LANG_FR, MIS_TEXT
+            MENUITEM "Italiano",   IDM_LANG_IT, MIS_TEXT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "~Save settings on exit", IDM_SAVEONEXIT, MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "~Background Run\tCtrl+B", IDM_BACKGRND, MIS_TEXT
+        MENUITEM "~Frame Controls\tCtrl+F", IDM_FRAME,    MIS_TEXT
+    END
+    SUBMENU "~Help", IDM_SUBMENU_HELP
+    BEGIN
+        MENUITEM "~About RollBall...", IDM_ABOUT, MIS_TEXT
+    END
+END
+
+ACCELTABLE ID_WINDOW PRELOAD
+BEGIN
+    "n", IDM_PLAY,    CONTROL
+    "N", IDM_PLAY,    CONTROL
+    "p", IDM_PAUSE,   CONTROL
+    "P", IDM_PAUSE,   CONTROL
+    "q", IDM_QUIT,    CONTROL
+    "Q", IDM_QUIT,    CONTROL
+    "x", IDM_EXIT,    CONTROL
+    "X", IDM_EXIT,    CONTROL
+    "b", IDM_BACKGRND, CONTROL
+    "B", IDM_BACKGRND, CONTROL
+    "f", IDM_FRAME,   CONTROL
+    "F", IDM_FRAME,   CONTROL
+END
+
+rcinclude src\rollball.dlg

@@ -1,0 +1,68 @@
+RollBall - Changelog
+====================
+
+1.3 (2026-09-10)
+- Renamed "Start Game" to "New Game"; added Ctrl+N shortcut
+- Added Ctrl+Q shortcut for Quit Game
+- Increased default window size to approximately 1024x768
+- Increased all game graphics to 24x24 pixels (scaled from native bitmaps)
+- Extended playing field to 42x30 inner cells to fill larger window
+- Game-over message box now displays in the selected language
+- Accelerators (Ctrl+N, Ctrl+Q) are guarded: ignored when game state
+  does not permit the action
+
+1.01 (2026-09-10)
+- Ported build system to Open Watcom wcc386 / wmake
+- Standardized folder layout: src/, bin/, doc/, legacy/
+- Restructured menu: Game / Options / Help (Plan.txt standard)
+- Added keyboard shortcuts: Ctrl+X (exit), Ctrl+P (pause),
+  Ctrl+B (background run), Ctrl+F (frame controls)
+- Added 6-language support: English, Spanish, Dutch, German, French, Italian
+- Added Background Run toggle (Ctrl+B)
+- Added Frame Controls toggle (Ctrl+F) - borderless mode
+- Added Save Settings on Exit (rollball.cfg)
+- Fixed window sizing using system metrics (SV_CYTITLEBAR, SV_CYMENU)
+- Removed old GEN_ERR on dialog box failure (graceful handling)
+- Standardized About dialog
+
+1.00 (2017)
+- 25th anniversary update
+- Used IBM VisualAge C++ build environment
+- Hi-res timer used (may not work with OS/2 2.0 anymore).
+- Speed increases as score increases
+- UI improved
+- lxLite is used too, but not in BUILD.CMD.
+- Abandoned: error checking. 
+
+0.99 (1992)
+- Original release by Stangl Roman
+- First version programmed and distributed
+
+== Game History ==
+
+RollBall is game the proprietary design of Stangl Roman. The goal of any player is, to roll
+RollBall (the red moving circle) of points (the colored circles) to get
+points. RollBall will be reflected by the borders of the playing ground (the
+borders of the Presentation Manager window), and deflected by the deflectors,
+the / and \ symbols.
+But beware of the holes (the black surronded dark circles), if you get in
+contact with one, you lose your life.
+Points, deflectors and holes randomly disappear and appear. Rolling over any
+point or deflector also removes them. To place a deflector, you use the mouse.
+The left mouse butten will place a \ deflector, and the right button will
+place a / deflector.
+
+I developed this program in about 3 Weeks in August. Because this is my first
+try to program the Presentation Manager there may and will be some bugs. I
+don't have any experience with programming PM, so there may be also more
+efficient steps to to some things, but I have good knowledge in C and of data
+structures and algorithms. For almoust any API (application program interface)
+I check the return value or error code, so there's a good chance, that a bug
+causes a message box to be displayed, giving the error and location in source
+code.
+
+Because OS/2 is a multitasking and multithreaded operating system, it is very
+difficult, to get an exact time bases. Because I haven't found any efficient
+solution to implement a time bases, this progam may be slow an slow machines
+(16Mhz 386sx) and too fast on fast machines (50Mhx 80486). The only solution
+is to add a delay loop in THREAD.C, but this requires a recompilition.

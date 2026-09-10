@@ -1,0 +1,42 @@
+DLGINCLUDE 1 "rollball.h"
+
+DLGTEMPLATE ID_ABOUTDIALOG PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "About RollBall", ID_ABOUTDIALOG, 32, 24, 220, 100,
+           WS_VISIBLE, FCF_TITLEBAR | FCF_DLGBORDER
+    BEGIN
+        CTEXT "RollBall for OS/2"              -1,  20, 82, 180, 8
+        CTEXT "Version 1.3"                    -1,  20, 72, 180, 8
+        CTEXT "(c) 1992 Stangl Roman"          -1,  20, 60, 180, 8
+        CTEXT "Released as Open Source (GPL)"  -1,  20, 50, 180, 8
+        CTEXT "OpenWatcom build 2026"          -1,  20, 40, 180, 8
+        DEFPUSHBUTTON "OK" DID_OK,             90,  6, 40, 14
+    END
+END
+
+DLGTEMPLATE ID_SCOREDIALOG PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Score Info", ID_SCOREDIALOG, 44, 10, 202, 122, WS_VISIBLE,
+            FCF_TITLEBAR | FCF_DLGBORDER
+    BEGIN
+        DEFPUSHBUTTON "~Ok", 4097, 22, 2, 160, 12
+        LTEXT   "1 Point",    926, 62, 60,  36, 8
+        LTEXT   "5 Points",   927, 62, 51,  36, 8
+        LTEXT   "10 Points",  928, 120, 60, 36, 8
+        LTEXT   "20 Points",  929, 120, 51, 36, 8
+        CONTROL BM_BP,  BM_BP,  50, 61, 20, 16, WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CONTROL BM_GP,  BM_GP,  50, 52, 20, 16, WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CONTROL BM_MP,  BM_MP, 108, 52, 20, 16, WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CONTROL BM_VP,  BM_VP, 108, 61, 20, 16, WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CONTROL BM_HOLE, BM_HOLE, 50, 20, 20, 16, WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        LTEXT   "This hole costs your life!", 932, 62, 19, 102, 8
+        CTEXT   "Your task is to roll RollBall over the points.", 920, 4, 112, 196, 8
+        CTEXT   "RollBall will be reflected by each border",      921, 4, 104, 196, 8
+        CTEXT   "of the playing ground. To deflect RollBall",     922, 4,  96, 196, 8
+        CTEXT   "the symbols \\ and / are used. Press the",       923, 4,  88, 196, 8
+        CTEXT   "left mouse button to get \\, right to get /.",   924, 4,  80, 196, 8
+        CTEXT   "You will earn score for:",                        925, 4,  72, 196, 8
+        CTEXT   "Your task: get as many points as possible,",     930, 4,  39, 196, 8
+        CTEXT   "but beware of holes!",                           931, 4,  31, 196, 8
+    END
+END
