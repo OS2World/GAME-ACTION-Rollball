@@ -38,7 +38,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Game", "~New Game\tCtrl+N", "~Pause Game\tCtrl+P", "~Quit Game\tCtrl+Q", "E~xit\tCtrl+X",
         "~Options", "Score ~Info...", "~Language", "~Save settings on exit",
         "~Background Run\tCtrl+B", "~Frame Controls\tCtrl+F",
-        "~Help", "~About RollBall...",
+        "~Help", "~About...",
         "RollBall Score",
         "Thank you for playing RollBall!\nYour score is %d point(s)!\nHope you had a good time!"
     },
@@ -46,7 +46,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Juego", "~Nuevo Juego\tCtrl+N", "~Pausar Juego\tCtrl+P", "~Terminar Juego\tCtrl+Q", "~Salir\tCtrl+X",
         "~Opciones", "Puntuacion...", "~Idioma", "~Guardar al salir",
         "Fondo ~Activo\tCtrl+B", "~Marco\tCtrl+F",
-        "A~yuda", "~Acerca de RollBall...",
+        "A~yuda", "~About...",
         "Puntuacion RollBall",
         "Gracias por jugar RollBall!\nTu puntuacion es %d punto(s)!\nEspero que lo hayas disfrutado!"
     },
@@ -54,7 +54,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Spel", "~Nieuw Spel\tCtrl+N", "~Pauze Spel\tCtrl+P", "~Stop Spel\tCtrl+Q", "~Afsluiten\tCtrl+X",
         "~Opties", "Score ~Info...", "~Taal", "~Opslaan bij afsluiten",
         "~Achtergrond Actief\tCtrl+B", "~Frame Bediening\tCtrl+F",
-        "~Help", "~Over RollBall...",
+        "~Help", "~About...",
         "RollBall Score",
         "Bedankt voor het spelen van RollBall!\nJe score is %d punt(en)!\nHoop dat je het leuk vond!"
     },
@@ -62,7 +62,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Spiel", "~Neues Spiel\tCtrl+N", "~Pause\tCtrl+P", "~Spiel beenden\tCtrl+Q", "~Beenden\tCtrl+X",
         "~Optionen", "Punkte ~Info...", "~Sprache", "~Einstellungen speichern",
         "~Hintergrundlauf\tCtrl+B", "~Rahmen\tCtrl+F",
-        "~Hilfe", "~Ueber RollBall...",
+        "~Hilfe", "~About...",
         "RollBall Punkte",
         "Danke fuer das Spielen von RollBall!\nDeine Punktzahl ist %d Punkt(e)!\nIch hoffe, du hattest Spass!"
     },
@@ -70,7 +70,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Jeu", "~Nouveau Jeu\tCtrl+N", "~Pause Jeu\tCtrl+P", "~Quitter Jeu\tCtrl+Q", "~Sortir\tCtrl+X",
         "~Options", "~Info Score...", "~Langue", "~Enregistrer a la sortie",
         "~Arriere-plan Actif\tCtrl+B", "~Cadre\tCtrl+F",
-        "~Aide", "~A propos de RollBall...",
+        "~Aide", "~About...",
         "Score RollBall",
         "Merci d'avoir joue a RollBall!\nVotre score est de %d point(s)!\nJ'espere que vous avez apprecie!"
     },
@@ -78,7 +78,7 @@ const char *lang_strings[LANG_COUNT][STR_COUNT] = {
         "~Gioco", "~Nuovo Gioco\tCtrl+N", "~Pausa Gioco\tCtrl+P", "~Ferma Gioco\tCtrl+Q", "~Esci\tCtrl+X",
         "~Opzioni", "~Info Punteggio...", "~Lingua", "~Salva all'uscita",
         "~Sfondo Attivo\tCtrl+B", "~Cornice\tCtrl+F",
-        "~Aiuto", "~Informazioni su RollBall...",
+        "~Aiuto", "~About...",
         "Punteggio RollBall",
         "Grazie per aver giocato a RollBall!\nIl tuo punteggio e %d punto/i!\nSpero che ti sia divertito!"
     }

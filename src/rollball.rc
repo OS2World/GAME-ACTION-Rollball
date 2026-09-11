@@ -46,7 +46,7 @@ BEGIN
     END
     SUBMENU "~Help", IDM_SUBMENU_HELP
     BEGIN
-        MENUITEM "~About RollBall...", IDM_ABOUT, MIS_TEXT
+        MENUITEM "~About...",          IDM_ABOUT, MIS_TEXT
     END
 END
 
