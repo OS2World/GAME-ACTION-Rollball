@@ -1,6 +1,8 @@
 # GAME-ACTION-Rollball
 
-Version 1.3 — A 32-bit multithreaded Presentation Manager ball-rolling game for OS/2 and ArcaOS.
+A 32-bit multithreaded Presentation Manager ball-rolling game for OS/2 and ArcaOS.
+
+![Rollball ScreenShot](/doc/RollBall.png)
 
 ## Overview
 
